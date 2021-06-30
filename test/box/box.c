@@ -23,12 +23,14 @@ void main()
 	drawa_(4.0,1.0);
 	drawa_(1.0,1.0);
 	pointa_(2.5,2.5);
+	drawa_(4.0,1.0);
+	drawa_(1.0,1.0);
+	pointa_(2.5,2.5);
 	finitt_(0,767);
 }
 int count ;
 int adeout_(int len, int *buf)
 {
-printf("count %d\n",len);
         count = len;
         if(count == 0) 
 		return 0;
