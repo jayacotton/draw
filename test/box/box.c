@@ -2,8 +2,8 @@
 #include <math.h>
 #include <stdio.h>
 #include "gems.h"
-#include "/home/jay/projects/graphics/plot10/c/f2c.h"
-#include "/home/jay/projects/graphics/plot10/c/plot.h"
+#include "../../f2c.h"
+#include "../../plot.h"
 #endif
 
 #define TRACEL(msg) printf("%s %d %s\n",__FILE__,__LINE__,msg);
