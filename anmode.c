@@ -1,0 +1,27 @@
+/* anmode.f -- translated by f2c (version 20200916).
+   You must link the resulting object file with libf2c:
+	on Microsoft Windows system, link with libf2c.lib;
+	on Linux or Unix systems, link with .../path/to/libf2c.a -lm
+	or, if you install libf2c.a in a standard place, with -lf2c -lm
+	-- in that order, at the end of the command line, as in
+		cc *.o -lf2c -lm
+	Source for libf2c is in /netlib/f2c/libf2c.zip, e.g.,
+
+		http://www.netlib.org/f2c/libf2c.zip
+*/
+
+#include "f2c.h"
+extern int tsend_ (void);
+extern int alfmod_ (void);
+
+/* ----------SUBROUTINE--ANMODE---------------TEKTRONIX, INC.----00000150 */
+int
+anmode_ (void)
+{
+
+/* * ENTER ALPHA-NUMERIC MODE                             00000180 */
+  alfmod_ ();
+/* * DUMP THE OUTPUT BUFFER                                00000200 */
+  tsend_ ();
+  return 0;
+}				/* anmode_ */

@@ -1,0 +1,146 @@
+/* rescal.f -- translated by f2c (version 20200916).
+   You must link the resulting object file with libf2c:
+	on Microsoft Windows system, link with libf2c.lib;
+	on Linux or Unix systems, link with .../path/to/libf2c.a -lm
+	or, if you install libf2c.a in a standard place, with -lf2c -lm
+	-- in that order, at the end of the command line, as in
+		cc *.o -lf2c -lm
+	Source for libf2c is in /netlib/f2c/libf2c.zip, e.g.,
+
+		http://www.netlib.org/f2c/libf2c.zip
+*/
+
+#include "f2c.h"
+
+/* Common Block Declarations */
+
+
+#define tktrnx_1 tktrnx_
+extern int pscal_ (void);
+extern float log (doublereal);
+
+/* ----------SUBROUTINE--RESCAL-------TEKTRONIX, INC.----00008230 */
+int
+rescal_ (void)
+{
+  /* Builtin functions */
+
+  /* Local variables */
+  static integer key, keyl;
+
+/* * FLAG OLD VIRTUAL COORDINATES AS INCORRECT */
+  tktrnx_1.kgrafl = 0;
+  tktrnx_1.kgnflg = 0;
+  key = tktrnx_1.keycon;
+  if (tktrnx_1.keycon < 1)
+    {
+      key = 5;
+    }
+  if (tktrnx_1.keycon > 4)
+    {
+      key = 4;
+    }
+/* * BRANCH TO PROPER SECTION AND RETURN                  00008360 */
+/* * LINEAR LOG POLAR USER ERROR                          00008370 */
+  switch (key)
+    {
+    case 1:
+      goto L100;
+    case 2:
+      goto L200;
+    case 3:
+      goto L300;
+    case 4:
+      goto L400;
+    case 5:
+      goto L500;
+    }
+/* * BOTH AXES LINEAR                                     00008390 */
+L100:
+  tktrnx_1.trpar1 = 0.f;
+/* * SEMI LOG OR LOG LOG                                  00008410 */
+L200:
+  keyl = tktrnx_1.trpar1 + 1.001f;
+/* * X AXIS -- LINEAR OR LOG                              00008430 */
+  switch (keyl)
+    {
+    case 1:
+      goto L210;
+    case 2:
+      goto L215;
+    case 3:
+      goto L210;
+    case 4:
+      goto L215;
+    }
+/* * LINEAR                                               00008450 */
+L210:
+  tktrnx_1.trfacx =
+    (real) (tktrnx_1.kmaxsx - tktrnx_1.kminsx) / (tktrnx_1.tmaxvx -
+						  tktrnx_1.tminvx);
+  goto L250;
+/* * PREVENT INVALID TRANSFORMATION */
+L215:
+  if (tktrnx_1.tminvx > 0.f && tktrnx_1.tmaxvx > 0.f)
+    {
+      goto L220;
+    }
+  tktrnx_1.kgnflg = 1;
+  tktrnx_1.trpar1 += -1.f;
+  goto L210;
+/* * SEMI LOG X AXIS                                        00008480 */
+L220:
+  tktrnx_1.trpar2 = log (tktrnx_1.tminvx);
+  tktrnx_1.trfacx =
+    (real) (tktrnx_1.kmaxsx - tktrnx_1.kminsx) / (log (tktrnx_1.tmaxvx) -
+						  tktrnx_1.trpar2);
+/* * Y AXIS -- LINEAR OR LOG                            00008510 */
+L250:
+  switch (keyl)
+    {
+    case 1:
+      goto L260;
+    case 2:
+      goto L260;
+    case 3:
+      goto L270;
+    case 4:
+      goto L270;
+    }
+/* * LINEAR                                               00008530 */
+L260:
+  tktrnx_1.trfacy =
+    (real) (tktrnx_1.kmaxsy - tktrnx_1.kminsy) / (tktrnx_1.tmaxvy -
+						  tktrnx_1.tminvy);
+  goto L600;
+/* *PREVENT INVALID TRANSFORMATION */
+L270:
+  if (tktrnx_1.tminvy > 0.f && tktrnx_1.tmaxvy > 0.f)
+    {
+      goto L280;
+    }
+  tktrnx_1.kgnflg = 1;
+  tktrnx_1.trpar1 += -2.f;
+  goto L260;
+/* * SEMI LOG Y AXIS                                 00008560 */
+L280:
+  tktrnx_1.trpar3 = log (tktrnx_1.tminvy);
+  tktrnx_1.trfacy =
+    (real) (tktrnx_1.kmaxsy - tktrnx_1.kminsy) / (log (tktrnx_1.tmaxvy) -
+						  tktrnx_1.trpar3);
+  goto L600;
+/* * POLAR SCALING                                       00008600 */
+L300:
+  pscal_ ();
+  goto L600;
+/* * USER FUNCTION                                        00008630 */
+L400:
+/*      CALL URSCAL                                        00008650 */
+  goto L600;
+/* * NO SCALE                                              00008670 */
+L500:
+  tktrnx_1.trfacx = 1.f;
+  tktrnx_1.trfacy = 1.f;
+L600:
+  return 0;
+}				/* rescal_ */
