@@ -19,38 +19,34 @@
 /* Table of constant values */
 
 static integer c__13 = 13;
-extern int alfmod_ (void);
-extern int cwsend_ (void);
-extern int movabs_ (integer *, integer *);
-extern int toutpt_ (integer *);
+extern int alfmod_(void);
+extern int cwsend_(void);
+extern int movabs_(integer *, integer *);
+extern int toutpt_(integer *);
 
 /* ----------SUBROUTINE--CARTN---------------TEKTRONIX, INC.----00018870 */
-int
-cartn_ (void)
+int cartn_(void)
 {
 
-  if (tktrnx_1.klmrgn == 0)
-    {
-      goto L10;
+    if (tktrnx_1.klmrgn == 0) {
+	goto L10;
     }
 /*IF (CR) CAN NOT BE SENT REMOVE ALL EXECUTEABLE CODE EXCEPT NEXT 2 00018980 */
 /* * LINES AND RETURN                                               00018990 */
-  movabs_ (&tktrnx_1.klmrgn, &tktrnx_1.kbeamy);
-  alfmod_ ();
-  goto L30;
-L10:
-  if (tktrnx_1.kkmode != 0)
-    {
-      alfmod_ ();
+    movabs_(&tktrnx_1.klmrgn, &tktrnx_1.kbeamy);
+    alfmod_();
+    goto L30;
+  L10:
+    if (tktrnx_1.kkmode != 0) {
+	alfmod_();
     }
 /* * OUTPUT (CR)                                                00019040 */
-  toutpt_ (&c__13);
-  tktrnx_1.kbeamx = 0;
+    toutpt_(&c__13);
+    tktrnx_1.kbeamx = 0;
 /* * RESTORE ZAXIS STATE ON 4014                                 00019070 */
-  if (tktrnx_1.kterm >= 2)
-    {
-      cwsend_ ();
+    if (tktrnx_1.kterm >= 2) {
+	cwsend_();
     }
-L30:
-  return 0;
+  L30:
+    return 0;
 }				/* cartn_ */

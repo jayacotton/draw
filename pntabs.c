@@ -16,19 +16,17 @@
 
 
 #define tktrnx_1 tktrnx_
-extern int tkpnt_ (integer *, integer *);
-extern int pntmod_ (void);
+extern int tkpnt_(integer *, integer *);
+extern int pntmod_(void);
 
 /* ----------SUBROUTINE--PNTABS----------TEKTRONIX, INC.----00011170 */
-int
-pntabs_ (integer * ix, integer * iy)
+int pntabs_(integer * ix, integer * iy)
 {
 
-  if (tktrnx_1.kkmode != 2)
-    {
-      pntmod_ ();
+    if (tktrnx_1.kkmode != 2) {
+	pntmod_();
     }
-  tkpnt_ (ix, iy);
-  tktrnx_1.kgrafl = 0;
-  return 0;
+    tkpnt_(ix, iy);
+    tktrnx_1.kgrafl = 0;
+    return 0;
 }				/* pntabs_ */

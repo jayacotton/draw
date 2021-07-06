@@ -12,13 +12,12 @@
 
 #include "f2c.h"
 
-extern int linef_ (void), cartn_ (void);
+extern int linef_(void), cartn_(void);
 /* ----------SUBROUTINE--NEWLIN-----------TEKTRONIX, INC.----00018790 */
-int
-newlin_ (void)
+int newlin_(void)
 {
 
-  cartn_ ();
-  linef_ ();
-  return 0;
+    cartn_();
+    linef_();
+    return 0;
 }				/* newlin_ */

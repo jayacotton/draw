@@ -17,9 +17,8 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--RSCALE-----------TEKTRONIX, INC.----00003210 */
-int
-rscale_ (real * factor)
+int rscale_(real * factor)
 {
-  tktrnx_1.trscal = *factor;
-  return 0;
+    tktrnx_1.trscal = *factor;
+    return 0;
 }				/* rscale_ */

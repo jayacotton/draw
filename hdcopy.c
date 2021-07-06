@@ -17,20 +17,19 @@
 static integer c__2 = 2;
 static integer c__180 = 180;
 
-extern int iowait_ (integer *);
-extern int toutst_ (integer *, integer *);
+extern int iowait_(integer *);
+extern int toutst_(integer *, integer *);
 
 /* ----------SUBROUTINE--HDCOPY--------------TEKTRONIX, INC.----00014450 */
-int
-hdcopy_ (void)
+int hdcopy_(void)
 {
-  /* Initialized data */
+    /* Initialized data */
 
-  static integer icode[2] = { 27, 23 };
+    static integer icode[2] = { 27, 23 };
 
 
 /* *  OUTPUT (ESC) (ETB) TO START HARD COPY                      00014500 */
-  toutst_ (&c__2, icode);
-  iowait_ (&c__180);
-  return 0;
+    toutst_(&c__2, icode);
+    iowait_(&c__180);
+    return 0;
 }				/* hdcopy_ */

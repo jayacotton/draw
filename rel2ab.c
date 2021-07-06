@@ -16,17 +16,16 @@
 
 
 #define tktrnx_1 tktrnx_
-extern int lvlcht_ (void);
+extern int lvlcht_(void);
 
 /* ----------SUBROUTINE--REL2AB----------KTRONIX, INC.----00005680 */
-int
-rel2ab_ (real * xin, real * yin, real * xout, real * yout)
+int rel2ab_(real * xin, real * yin, real * xout, real * yout)
 {
 
-  lvlcht_ ();
-  *xout = (*xin * tktrnx_1.trcosf - *yin * tktrnx_1.trsinf) *
-    tktrnx_1.trscal + tktrnx_1.timagx;
-  *yout = (*xin * tktrnx_1.trsinf + *yin * tktrnx_1.trcosf) *
-    tktrnx_1.trscal + tktrnx_1.timagy;
-  return 0;
+    lvlcht_();
+    *xout = (*xin * tktrnx_1.trcosf - *yin * tktrnx_1.trsinf) *
+	tktrnx_1.trscal + tktrnx_1.timagx;
+    *yout = (*xin * tktrnx_1.trsinf + *yin * tktrnx_1.trcosf) *
+	tktrnx_1.trscal + tktrnx_1.timagy;
+    return 0;
 }				/* rel2ab_ */

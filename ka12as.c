@@ -13,31 +13,29 @@
 #include "f2c.h"
 
 /* ----------SUBROUTINE KA12AS------------EGLIN AFB-----------00024920 */
-int
-ka12as_ (integer * nc, logical1 * ia1, logical1 * iade)
+int ka12as_(integer * nc, logical1 * ia1, logical1 * iade)
 {
-  /* Initialized data */
+    /* Initialized data */
 
-  static logical1 z__ = FALSE_;
+    static logical1 z__ = FALSE_;
 
-  /* System generated locals */
-  integer i__1;
+    /* System generated locals */
+    integer i__1;
 
-  /* Local variables */
-  static integer i__, ie;
+    /* Local variables */
+    static integer i__, ie;
 
-  /* Parameter adjustments */
-  --iade;
-  --ia1;
+    /* Parameter adjustments */
+    --iade;
+    --ia1;
 
-  /* Function Body */
-  ie = 2 * *nc - 1;
-  i__1 = ie;
-  for (i__ = 1; i__ <= i__1; i__ += 2)
-    {
-      iade[i__] = ia1[i__];
+    /* Function Body */
+    ie = 2 * *nc - 1;
+    i__1 = ie;
+    for (i__ = 1; i__ <= i__1; i__ += 2) {
+	iade[i__] = ia1[i__];
 /* L1: */
-      iade[i__ + 1] = z__;
+	iade[i__ + 1] = z__;
     }
-  return 0;
+    return 0;
 }				/* ka12as_ */

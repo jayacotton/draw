@@ -18,11 +18,10 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SEETRN-----TEKTRONIX, INC.----00001070 */
-int
-seetrn_ (real * xfac, real * yfac, integer * key)
+int seetrn_(real * xfac, real * yfac, integer * key)
 {
-  *xfac = tktrnx_1.trfacx;
-  *yfac = tktrnx_1.trfacy;
-  *key = tktrnx_1.keycon;
-  return 0;
+    *xfac = tktrnx_1.trfacx;
+    *yfac = tktrnx_1.trfacy;
+    *key = tktrnx_1.keycon;
+    return 0;
 }				/* seetrn_ */

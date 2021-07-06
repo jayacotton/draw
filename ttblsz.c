@@ -17,9 +17,8 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--TTBLSZ--------------TEKTRONIX, INC.----00001390 */
-int
-ttblsz_ (integer * itblsz)
+int ttblsz_(integer * itblsz)
 {
-  tktrnx_1.ktblsz = *itblsz;
-  return 0;
+    tktrnx_1.ktblsz = *itblsz;
+    return 0;
 }				/* ttblsz_ */

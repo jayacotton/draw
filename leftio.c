@@ -18,20 +18,18 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------FUNCTION----LEFTIO----------TEKTRONIX, INC.----00017020 */
-integer
-leftio_ (integer * iobuf)
+integer leftio_(integer * iobuf)
 {
-  /* System generated locals */
-  integer ret_val;
+    /* System generated locals */
+    integer ret_val;
 
-  /* Local variables */
-  static integer itemp;
+    /* Local variables */
+    static integer itemp;
 
-  itemp = tktrnx_1.kinlft;
-  if (*iobuf == 0)
-    {
-      itemp = tktrnx_1.kotlft;
+    itemp = tktrnx_1.kinlft;
+    if (*iobuf == 0) {
+	itemp = tktrnx_1.kotlft;
     }
-  ret_val = itemp;
-  return ret_val;
+    ret_val = itemp;
+    return ret_val;
 }				/* leftio_ */

@@ -16,49 +16,43 @@
 
 #define tktrnx_1 tktrnx_
 
-extern int alfmod_ (void);
-extern int movabs_ (integer *, integer *);
+extern int alfmod_(void);
+extern int movabs_(integer *, integer *);
 /* ----------SUBROUTINE--TABVER-----------TEKTRONIX, INC.----00012880 */
-int
-tabver_ (integer * itbtbl)
+int tabver_(integer * itbtbl)
 {
-  /* System generated locals */
-  integer i__1;
+    /* System generated locals */
+    integer i__1;
 
-  /* Local variables */
-  static integer i__, k;
+    /* Local variables */
+    static integer i__, k;
 
-  /* Parameter adjustments */
-  --itbtbl;
+    /* Parameter adjustments */
+    --itbtbl;
 
-  /* Function Body */
-  i__1 = tktrnx_1.ktblsz;
-  for (k = 1; k <= i__1; ++k)
-    {
-      i__ = tktrnx_1.ktblsz - k + 1;
-      if (itbtbl[i__] <= 0)
-	{
-	  goto L10;
+    /* Function Body */
+    i__1 = tktrnx_1.ktblsz;
+    for (k = 1; k <= i__1; ++k) {
+	i__ = tktrnx_1.ktblsz - k + 1;
+	if (itbtbl[i__] <= 0) {
+	    goto L10;
 	}
-      if (itbtbl[i__] < tktrnx_1.kbeamy)
-	{
-	  goto L30;
+	if (itbtbl[i__] < tktrnx_1.kbeamy) {
+	    goto L30;
 	}
-      if (itbtbl[i__] < tktrnx_1.kbeamy)
-	{
-	  goto L30;
+	if (itbtbl[i__] < tktrnx_1.kbeamy) {
+	    goto L30;
 	}
-      if (itbtbl[i__] < tktrnx_1.kbeamy)
-	{
-	  goto L30;
+	if (itbtbl[i__] < tktrnx_1.kbeamy) {
+	    goto L30;
 	}
-    L10:
-      ;
+      L10:
+	;
     }
-  goto L20;
-L30:
-  movabs_ (&tktrnx_1.kbeamx, &itbtbl[i__]);
-  alfmod_ ();
-L20:
-  return 0;
+    goto L20;
+  L30:
+    movabs_(&tktrnx_1.kbeamx, &itbtbl[i__]);
+    alfmod_();
+  L20:
+    return 0;
 }				/* tabver_ */

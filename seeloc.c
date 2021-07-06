@@ -17,10 +17,9 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SEELOC-------TEKTRONIX, INC.----00016560 */
-int
-seeloc_ (integer * ix, integer * iy)
+int seeloc_(integer * ix, integer * iy)
 {
-  *ix = tktrnx_1.kbeamx;
-  *iy = tktrnx_1.kbeamy;
-  return 0;
+    *ix = tktrnx_1.kbeamx;
+    *iy = tktrnx_1.kbeamy;
+    return 0;
 }				/* seeloc_ */

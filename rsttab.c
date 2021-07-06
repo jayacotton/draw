@@ -17,59 +17,49 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--RSTTAB-------TEKTRONIX, INC.----00012370 */
-int
-rsttab_ (integer * itab, integer * itbtbl)
+int rsttab_(integer * itab, integer * itbtbl)
 {
-  /* System generated locals */
-  integer i__1;
+    /* System generated locals */
+    integer i__1;
 
-  /* Local variables */
-  static integer i__, j, k, ii;
+    /* Local variables */
+    static integer i__, j, k, ii;
 
-  /* Parameter adjustments */
-  --itbtbl;
+    /* Parameter adjustments */
+    --itbtbl;
 
-  /* Function Body */
-  if (*itab < 0)
-    {
-      goto L10;
+    /* Function Body */
+    if (*itab < 0) {
+	goto L10;
+    } else if (*itab == 0) {
+	goto L20;
+    } else {
+	goto L30;
     }
-  else if (*itab == 0)
-    {
-      goto L20;
-    }
-  else
-    {
-      goto L30;
-    }
-L30:
-  i__1 = tktrnx_1.ktblsz;
-  for (i__ = 1; i__ <= i__1; ++i__)
-    {
-      if (*itab == itbtbl[i__])
-	{
-	  goto L50;
+  L30:
+    i__1 = tktrnx_1.ktblsz;
+    for (i__ = 1; i__ <= i__1; ++i__) {
+	if (*itab == itbtbl[i__]) {
+	    goto L50;
 	}
 /* L40: */
     }
-  goto L10;
-L50:
-  j = tktrnx_1.ktblsz - 1;
-  i__1 = j;
-  for (k = i__; k <= i__1; ++k)
-    {
+    goto L10;
+  L50:
+    j = tktrnx_1.ktblsz - 1;
+    i__1 = j;
+    for (k = i__; k <= i__1; ++k) {
 /* L60: */
-      itbtbl[k] = itbtbl[k + 1];
+	itbtbl[k] = itbtbl[k + 1];
     }
-  itbtbl[tktrnx_1.ktblsz] = 0;
-  goto L10;
-L20:
-  i__1 = tktrnx_1.ktblsz;
-  for (ii = 1; ii <= i__1; ++ii)
-    {
+    itbtbl[tktrnx_1.ktblsz] = 0;
+    goto L10;
+  L20:
+    i__1 = tktrnx_1.ktblsz;
+    for (ii = 1; ii <= i__1; ++ii) {
 /* L21: */
-      itbtbl[ii] = 0;
+	itbtbl[ii] = 0;
     }
-L10:
-  return 0;
+  L10:
+    return 0;
 }				/* rsttab_ */

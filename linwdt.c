@@ -18,13 +18,12 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------FUNCTION----LINWDT----------TEKTRONIX, INC.----00022400 */
-integer
-linwdt_ (integer * numchr)
+integer linwdt_(integer * numchr)
 {
-  /* System generated locals */
-  integer ret_val;
+    /* System generated locals */
+    integer ret_val;
 
-  ret_val = (tktrnx_1.khorsz * *numchr + tktrnx_1.kfactr / 2) /
-    tktrnx_1.kfactr;
-  return ret_val;
+    ret_val = (tktrnx_1.khorsz * *numchr + tktrnx_1.kfactr / 2) /
+	tktrnx_1.kfactr;
+    return ret_val;
 }				/* linwdt_ */

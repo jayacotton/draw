@@ -15,77 +15,68 @@
 /* Common Block Declarations */
 
 #define tktrnx_1 tktrnx_
-extern int buffpk_ (integer *, integer *);
+extern int buffpk_(integer *, integer *);
 
 /* ----------SUBROUTINE--TOUTST--------TEKTRONIX, IN--- --00023500 */
-int
-toutst_ (integer * len, integer * iade)
+int toutst_(integer * len, integer * iade)
 {
-  /* Initialized data */
+    /* Initialized data */
 
-  static integer isync = 22;
-  static integer maxlen = 72;
+    static integer isync = 22;
+    static integer maxlen = 72;
 
-  /* System generated locals */
-  integer i__1, i__2;
+    /* System generated locals */
+    integer i__1, i__2;
 
-  /* Local variables */
-  static integer i__, k, iuse[72], itemp, itest;
-  static integer lenout;
+    /* Local variables */
+    static integer i__, k, iuse[72], itemp, itest;
+    static integer lenout;
 
-  /* Parameter adjustments */
-  --iade;
+    /* Parameter adjustments */
+    --iade;
 
-  /* Function Body */
-  lenout = 0;
-  if (*len <= 0)
-    {
-      goto L40;
+    /* Function Body */
+    lenout = 0;
+    if (*len <= 0) {
+	goto L40;
     }
-  itest = tktrnx_1.kpad2 - 1;
-  i__1 = *len;
-  for (i__ = 1; i__ <= i__1; ++i__)
-    {
-      itemp = iade[i__];
+    itest = tktrnx_1.kpad2 - 1;
+    i__1 = *len;
+    for (i__ = 1; i__ <= i__1; ++i__) {
+	itemp = iade[i__];
 /* * TEST TO SEE IF PADDING WITH (SYN) TO SOLVE SPEED IS NEEDED    00023670 */
 /* * REMOVE THIS SECTION IF NOT NEEDED ****************************00023680 */
 #if 0
-      if (itest <= 0)
-	{
-	  goto L20;
+	if (itest <= 0) {
+	    goto L20;
 	}
-      if (itemp > 31)
-	{
-	  goto L20;
+	if (itemp > 31) {
+	    goto L20;
 	}
-      if (itemp < 27)
-	{
-	  goto L20;
+	if (itemp < 27) {
+	    goto L20;
 	}
-      i__2 = itest;
-      for (k = 1; k <= i__2; ++k)
-	{
-	  if (lenout >= maxlen)
-	    {
-	      goto L40;
+	i__2 = itest;
+	for (k = 1; k <= i__2; ++k) {
+	    if (lenout >= maxlen) {
+		goto L40;
 	    }
-	  ++lenout;
+	    ++lenout;
 /* L10: */
-	  iuse[lenout - 1] = isync;
+	    iuse[lenout - 1] = isync;
 	}
 #endif
-    L20:
+      L20:
 /* ******************************************************************00023770 */
 /* * INSERT CODE EXPANSION CHARACTERS HERE, WHEN NEEDED              00023780 */
-      if (lenout >= maxlen)
-	{
-	  goto L40;
+	if (lenout >= maxlen) {
+	    goto L40;
 	}
-      ++lenout;
+	++lenout;
 /* L30: */
-      iuse[lenout - 1] = itemp;
+	iuse[lenout - 1] = itemp;
     }
-L40:
-  buffpk_ (&lenout, iuse);
-  return 0;
+  L40:
+    buffpk_(&lenout, iuse);
+    return 0;
 }				/* toutst_ */

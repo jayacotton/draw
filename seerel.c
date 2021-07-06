@@ -18,11 +18,10 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SEEREL----------TEKTRONIX, INC.----00001230 */
-int
-seerel_ (real * rcos, real * rsin, real * scale)
+int seerel_(real * rcos, real * rsin, real * scale)
 {
-  *rcos = tktrnx_1.trcosf;
-  *rsin = tktrnx_1.trsinf;
-  *scale = tktrnx_1.trscal;
-  return 0;
+    *rcos = tktrnx_1.trcosf;
+    *rsin = tktrnx_1.trsinf;
+    *scale = tktrnx_1.trscal;
+    return 0;
 }				/* seerel_ */

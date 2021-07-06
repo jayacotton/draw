@@ -12,16 +12,15 @@
 
 #include "f2c.h"
 
-extern int rel2ab_ (real *, real *, real *, real *);
-extern int dashsa_ (real *, real *, integer *);
+extern int rel2ab_(real *, real *, real *, real *);
+extern int dashsa_(real *, real *, integer *);
 /* ----------SUBROUTINE--DASHSR------------------------TEKTRONIX, INC.----00001700 */
 /*                                                                       00001710 */
-/* Subroutine */ int
-dashsr_ (real * x, real * y, integer * l)
+/* Subroutine */ int dashsr_(real * x, real * y, integer * l)
 {
-  static real rx, ry;
+    static real rx, ry;
 
-  rel2ab_ (x, y, &rx, &ry);
-  dashsa_ (&rx, &ry, l);
-  return 0;
+    rel2ab_(x, y, &rx, &ry);
+    dashsa_(&rx, &ry, l);
+    return 0;
 }				/* dashsr_ */

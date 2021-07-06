@@ -19,12 +19,12 @@
 
 /* ----------SUBROUTINE--SEETRM----------TEKTRONIX, INC.----00000400 */
 int
-seetrm_ (integer * ibaudr, integer * iterm, integer * icsize,
-	 integer * maxscr)
+seetrm_(integer * ibaudr, integer * iterm, integer * icsize,
+	integer * maxscr)
 {
-  *ibaudr = tktrnx_1.kbaudr;
-  *iterm = tktrnx_1.kterm;
-  *icsize = tktrnx_1.ksizef;
-  *maxscr = 4095 / tktrnx_1.kfactr;
-  return 0;
+    *ibaudr = tktrnx_1.kbaudr;
+    *iterm = tktrnx_1.kterm;
+    *icsize = tktrnx_1.ksizef;
+    *maxscr = 4095 / tktrnx_1.kfactr;
+    return 0;
 }				/* seetrm_ */

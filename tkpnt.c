@@ -19,25 +19,23 @@
 /* Table of constant values */
 
 static integer c__29 = 29;
-extern int xycnvt_ (integer *, integer *);
-extern int toutpt_ (integer *);
+extern int xycnvt_(integer *, integer *);
+extern int toutpt_(integer *);
 
 /* ----------SUBROUTINE--TKPNT------------TEKTRONIX, INC.----00017640 */
-int
-tkpnt_ (integer * ix, integer * iy)
+int tkpnt_(integer * ix, integer * iy)
 {
 
-  if (tktrnx_1.kterm >= 3)
-    {
-      goto L10;
+    if (tktrnx_1.kterm >= 3) {
+	goto L10;
     }
 /* * PUT OUT A GS FOR SIMULATED POINT PLOT MODE            00017750 */
-  toutpt_ (&c__29);
-  tktrnx_1.kmovef = 1;
+    toutpt_(&c__29);
+    tktrnx_1.kmovef = 1;
 /* * MOVE TO POINT                                         00017780 */
-  xycnvt_ (ix, iy);
+    xycnvt_(ix, iy);
 /* * DRAW  POINT                                             00017800 */
-L10:
-  xycnvt_ (ix, iy);
-  return 0;
+  L10:
+    xycnvt_(ix, iy);
+    return 0;
 }				/* tkpnt_ */

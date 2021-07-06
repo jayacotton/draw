@@ -4,14 +4,21 @@
 
 #define tktrnx_1 tktrnx_
 
-extern int vecmod_ (void);
-extern int xycnvt_ (integer *, integer *);
+extern int vecmod_(void);
+extern int xycnvt_(integer *, integer *);
 
-int
-movabs_ (integer ix, integer iy)
+int movabs_(integer *ix, integer *iy)
 {
-  vecmod_ ();
-  xycnvt_ (&ix, &iy);
-  tktrnx_1.kgrafl = 0;
-  return 0;
+    vecmod_();
+    xycnvt_(ix, iy);
+    tktrnx_1.kgrafl = 0;
+    return 0;
 }				/* movabs_ */
+
+int movabs(x,y)
+{
+int ix,iy;
+	ix = x;
+	iy = y;
+	return(movabs_(&ix,&iy));
+}

@@ -18,21 +18,20 @@
 
 /* Table of constant values */
 
-extern int toutst_ (integer *, integer *);
+extern int toutst_(integer *, integer *);
 static integer c__2 = 2;
 
 /* ----------SUBROUTINE--IPMOD----------TEKTRONIX, INC.----00021470 */
-int
-ipmod_ (void)
+int ipmod_(void)
 {
-  /* Initialized data */
+    /* Initialized data */
 
-  static integer icode[2] = { 31, 30 };
+    static integer icode[2] = { 31, 30 };
 
 
 /* * OUTPUT (US) TO CANCEL PREVIOUS MODE AND (RS) TO SET INCPLT MODE     00021590 */
-  toutst_ (&c__2, icode);
-  tktrnx_1.kkmode = 3;
-  tktrnx_1.kgrafl = 0;
-  return 0;
+    toutst_(&c__2, icode);
+    tktrnx_1.kkmode = 3;
+    tktrnx_1.kgrafl = 0;
+    return 0;
 }				/* ipmod_ */

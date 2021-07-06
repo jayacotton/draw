@@ -11,16 +11,15 @@
 */
 
 #include "f2c.h"
-extern int rel2ab_ (real *, real *, real *, real *);
-extern int pointa_ (real *, real *);
+extern int rel2ab_(real *, real *, real *, real *);
+extern int pointa_(real *, real *);
 
 /* ----------SUBROUTINE--POINTR---------TEKTRONIX, INC.----00004370 */
-int
-pointr_ (real * x, real * y)
+int pointr_(real * x, real * y)
 {
-  static real rx, ry;
+    static real rx, ry;
 
-  rel2ab_ (x, y, &rx, &ry);
-  pointa_ (&rx, &ry);
-  return 0;
+    rel2ab_(x, y, &rx, &ry);
+    pointa_(&rx, &ry);
+    return 0;
 }				/* pointr_ */

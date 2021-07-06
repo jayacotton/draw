@@ -17,18 +17,15 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SETBUF-----------TEKTRONIX, INC.----00016850 */
-int
-setbuf_ (integer * kform)
+int setbuf_(integer * kform)
 {
-  tktrnx_1.kunit = *kform;
+    tktrnx_1.kunit = *kform;
 /* * CHECK FOR OUT OF BOUNDS FORMAT TYPES                00016960 */
-  if (tktrnx_1.kunit < 1)
-    {
-      tktrnx_1.kunit = 1;
+    if (tktrnx_1.kunit < 1) {
+	tktrnx_1.kunit = 1;
     }
-  if (tktrnx_1.kunit > 4)
-    {
-      tktrnx_1.kunit = 4;
+    if (tktrnx_1.kunit > 4) {
+	tktrnx_1.kunit = 4;
     }
-  return 0;
+    return 0;
 }				/* setbuf_ */

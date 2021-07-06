@@ -16,29 +16,26 @@
 
 #define tktrnx_1 tktrnx_
 
-extern int alfmod_ (void), toutpt_ (integer *);
+extern int alfmod_(void), toutpt_(integer *);
 /* Table of constant values */
 
 static integer c__8 = 8;
 
 /* ----------SUBROUTINE--BAKSP-------------TEKTRONIX, INC.----00019370 */
-int
-baksp_ (void)
+int baksp_(void)
 {
 
-  if (tktrnx_1.kkmode != 0)
-    {
-      alfmod_ ();
+    if (tktrnx_1.kkmode != 0) {
+	alfmod_();
     }
 /* * OUTPUT (BS)                                               00019480 */
-  toutpt_ (&c__8);
-  tktrnx_1.kbeamx -= (tktrnx_1.khorsz + tktrnx_1.kfactr / 2) /
-    tktrnx_1.kfactr;
-  if (tktrnx_1.kbeamx >= 0)
-    {
-      goto L10;
+    toutpt_(&c__8);
+    tktrnx_1.kbeamx -= (tktrnx_1.khorsz + tktrnx_1.kfactr / 2) /
+	tktrnx_1.kfactr;
+    if (tktrnx_1.kbeamx >= 0) {
+	goto L10;
     }
-  tktrnx_1.kbeamx += 4095 / tktrnx_1.kfactr;
-L10:
-  return 0;
+    tktrnx_1.kbeamx += 4095 / tktrnx_1.kfactr;
+  L10:
+    return 0;
 }				/* baksp_ */

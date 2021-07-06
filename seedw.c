@@ -17,12 +17,11 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SEEDW---------TEKTRONIX, INC.----00000740 */
-int
-seedw_ (real * xmin, real * xmax, real * ymin, real * ymax)
+int seedw_(real * xmin, real * xmax, real * ymin, real * ymax)
 {
-  *xmin = tktrnx_1.tminvx;
-  *xmax = tktrnx_1.tmaxvx;
-  *ymin = tktrnx_1.tminvy;
-  *ymax = tktrnx_1.tmaxvy;
-  return 0;
+    *xmin = tktrnx_1.tminvx;
+    *xmax = tktrnx_1.tmaxvx;
+    *ymin = tktrnx_1.tminvy;
+    *ymax = tktrnx_1.tmaxvy;
+    return 0;
 }				/* seedw_ */

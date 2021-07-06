@@ -18,28 +18,26 @@
 
 /* Table of constant values */
 
-extern int v2st_ (integer *, real *, real *, integer *, integer *);
-extern int dshmod_ (integer *), tkdash_ (integer *, integer *);
-extern int lvlcht_ (void);
+extern int v2st_(integer *, real *, real *, integer *, integer *);
+extern int dshmod_(integer *), tkdash_(integer *, integer *);
+extern int lvlcht_(void);
 
 static integer c__1 = 1;
 
 /* ----------SUBROUTINE--DASHA-------------TEKTRONIX, INC.----00004530 */
-int
-dasha_ (real * x, real * y, integer * l)
+int dasha_(real * x, real * y, integer * l)
 {
-  static integer ix, iy;
+    static integer ix, iy;
 
-  lvlcht_ ();
+    lvlcht_();
 /* * CONVERT TO SCREEN CO-ORDINATES                           00004640 */
-  v2st_ (&c__1, x, y, &ix, &iy);
+    v2st_(&c__1, x, y, &ix, &iy);
 /* * SKIP IF LINE COMPLETELY OUTSIDE WINDOW                   00004660 */
-  if (tktrnx_1.kgnflg == 1)
-    {
-      goto L10;
+    if (tktrnx_1.kgnflg == 1) {
+	goto L10;
     }
-  dshmod_ (l);
-  tkdash_ (&ix, &iy);
-L10:
-  return 0;
+    dshmod_(l);
+    tkdash_(&ix, &iy);
+  L10:
+    return 0;
 }				/* dasha_ */

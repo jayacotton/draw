@@ -15,16 +15,15 @@
 /* Common Block Declarations */
 
 #define tktrnx_1 tktrnx_
-extern float sin (doublereal);
-extern float cos (doublereal);
+extern float sin(doublereal);
+extern float cos(doublereal);
 
 /* ----------SUBROUTINE--RROTAT--------EKTRONIX, INC.----00003060 */
-int
-rrotat_ (real * deg)
+int rrotat_(real * deg)
 {
-  /* Builtin functions */
+    /* Builtin functions */
 
-  tktrnx_1.trsinf = sin (*deg / 57.29578f);
-  tktrnx_1.trcosf = cos (*deg / 57.29578f);
-  return 0;
+    tktrnx_1.trsinf = sin(*deg / 57.29578f);
+    tktrnx_1.trcosf = cos(*deg / 57.29578f);
+    return 0;
 }				/* rrotat_ */

@@ -15,47 +15,42 @@
 /* Common Block Declarations */
 
 #define tktrnx_1 tktrnx_
-extern int cwsend_ (void);
-extern int chrsiz_ (integer *);
-extern int recovr_ (void);
+extern int cwsend_(void);
+extern int chrsiz_(integer *);
+extern int recovr_(void);
 
 /* ----------SUBROUTINE--RESTAT-----------TEKTRONIX, INC.----00016070 */
-int
-restat_ (real * rarray)
+int restat_(real * rarray)
 {
-  /* Local variables */
-  static integer i__;
+    /* Local variables */
+    static integer i__;
 #define ib ((integer *)&tktrnx_1 + 19)
 #define rb ((real *)&tktrnx_1)
 
 /* * COPY GIVEN STATUS INTO TCS COMMON                        00016190 */
-  /* Parameter adjustments */
-  --rarray;
+    /* Parameter adjustments */
+    --rarray;
 
-  /* Function Body */
-  for (i__ = 1; i__ <= 19; ++i__)
-    {
+    /* Function Body */
+    for (i__ = 1; i__ <= 19; ++i__) {
 /* L100: */
-      rb[i__ - 1] = rarray[i__];
+	rb[i__ - 1] = rarray[i__];
     }
-  for (i__ = 1; i__ <= 41; ++i__)
-    {
+    for (i__ = 1; i__ <= 41; ++i__) {
 /* L101: */
-      ib[i__ - 1] = rarray[i__ + 19];
+	ib[i__ - 1] = rarray[i__ + 19];
     }
 /* * RESTORE CHARACTER SIZE                                  00016240 */
-  if (tktrnx_1.kterm > 1)
-    {
-      chrsiz_ (&tktrnx_1.ksizef);
+    if (tktrnx_1.kterm > 1) {
+	chrsiz_(&tktrnx_1.ksizef);
     }
 /* * RESTORE ZAXIS AND DASH LINE                             00016260 */
-  if (tktrnx_1.kterm > 2)
-    {
-      cwsend_ ();
+    if (tktrnx_1.kterm > 2) {
+	cwsend_();
     }
 /* * CALL TO RECOVER POSITION AND MODE                        00016280 */
-  recovr_ ();
-  return 0;
+    recovr_();
+    return 0;
 }				/* restat_ */
 
 #undef rb

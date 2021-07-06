@@ -13,14 +13,13 @@
 #include "f2c.h"
 
 /* ----------SUBROUTINE--MOVER----EKTRONIX, INC.----00005600 */
-extern int movea_ (real *, real *);
-extern int rel2ab_ (real *, real *, real *, real *);
-int
-mover_ (real * x, real * y)
+extern int movea_(real *, real *);
+extern int rel2ab_(real *, real *, real *, real *);
+int mover_(real * x, real * y)
 {
-  static real rx, ry;
+    static real rx, ry;
 
-  rel2ab_ (x, y, &rx, &ry);
-  movea_ (&rx, &ry);
-  return 0;
+    rel2ab_(x, y, &rx, &ry);
+    movea_(&rx, &ry);
+    return 0;
 }				/* mover_ */

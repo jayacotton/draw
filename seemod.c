@@ -18,11 +18,10 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SEEMOD----------TEKTRONIX, INC.----00000910 */
-int
-seemod_ (integer * line, integer * izaxis, integer * mode)
+int seemod_(integer * line, integer * izaxis, integer * mode)
 {
-  *line = tktrnx_1.kline;
-  *izaxis = tktrnx_1.kzaxis;
-  *mode = tktrnx_1.kkmode;
-  return 0;
+    *line = tktrnx_1.kline;
+    *izaxis = tktrnx_1.kzaxis;
+    *mode = tktrnx_1.kkmode;
+    return 0;
 }				/* seemod_ */

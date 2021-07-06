@@ -11,16 +11,15 @@
 */
 
 #include "f2c.h"
-extern int drawa_ (real *, real *);
-extern int rel2ab_ (real *, real *, real *, real *);
+extern int drawa_(real *, real *);
+extern int rel2ab_(real *, real *, real *, real *);
 
 /* ----------SUBROUTINE--DRAWR-----------TEKTRONIX, INC.----00005040 */
-int
-drawr_ (real * x, real * y)
+int drawr_(real * x, real * y)
 {
-  static real rx, ry;
+    static real rx, ry;
 
-  rel2ab_ (x, y, &rx, &ry);
-  drawa_ (&rx, &ry);
-  return 0;
+    rel2ab_(x, y, &rx, &ry);
+    drawa_(&rx, &ry);
+    return 0;
 }				/* drawr_ */

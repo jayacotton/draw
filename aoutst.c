@@ -11,30 +11,28 @@
 */
 
 #include "f2c.h"
-extern int anstr_ (integer *, integer *);
-extern int kam2as_ (integer *, integer *, integer *);
+extern int anstr_(integer *, integer *);
+extern int kam2as_(integer *, integer *, integer *);
 
 /* ----------SUBROUTINE--AOUTST-------TEKTRONIX, INC.----00018330 */
-int
-aoutst_ (integer * nchar, integer * iam)
+int aoutst_(integer * nchar, integer * iam)
 {
-  /* Initialized data */
+    /* Initialized data */
 
-  static integer maxlen = 72;
+    static integer maxlen = 72;
 
-  static integer len, iade[72];
+    static integer len, iade[72];
 
-  /* Parameter adjustments */
-  --iam;
+    /* Parameter adjustments */
+    --iam;
 
-  /* Function Body */
-  len = *nchar;
-  if (len > maxlen)
-    {
-      len = maxlen;
+    /* Function Body */
+    len = *nchar;
+    if (len > maxlen) {
+	len = maxlen;
     }
-  kam2as_ (&len, &iam[1], iade);
-  anstr_ (&len, iade);
-  anstr_ (&len, iade);
-  return 0;
+    kam2as_(&len, &iam[1], iade);
+    anstr_(&len, iade);
+    anstr_(&len, iade);
+    return 0;
 }				/* aoutst_ */

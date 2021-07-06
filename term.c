@@ -16,18 +16,16 @@
 
 #define tktrnx_1 tktrnx_
 
-extern int reset_ (void);
+extern int reset_(void);
 /* ----------SUBROUTINE--TERM-------------TEKTRONIX, INC.----00001530 */
-int
-term_ (integer * iterm, integer * iscal)
+int term_(integer * iterm, integer * iscal)
 {
 
-  tktrnx_1.kterm = *iterm;
-  tktrnx_1.kfactr = 4;
-  if (*iscal > 1025)
-    {
-      tktrnx_1.kfactr = 1;
+    tktrnx_1.kterm = *iterm;
+    tktrnx_1.kfactr = 4;
+    if (*iscal > 1025) {
+	tktrnx_1.kfactr = 1;
     }
-  reset_ ();
-  return 0;
+    reset_();
+    return 0;
 }				/* term_ */

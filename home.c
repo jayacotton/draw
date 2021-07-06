@@ -17,15 +17,14 @@
 
 #define tktrnx_1 tktrnx_
 
-extern int alfmod_ (void);
-extern int movabs_ (integer *, integer *);
+extern int alfmod_(void);
+extern int movabs_(integer *, integer *);
 
 /* ----------SUBROUTINE--HOME-----------TEKTRONIX, INC.----00019560 */
-int
-home_ (void)
+int home_(void)
 {
 
-  movabs_ (&tktrnx_1.klmrgn, &tktrnx_1.khomey);
-  alfmod_ ();
-  return 0;
+    movabs_(&tktrnx_1.klmrgn, &tktrnx_1.khomey);
+    alfmod_();
+    return 0;
 }				/* home_ */

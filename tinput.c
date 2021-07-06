@@ -15,15 +15,14 @@
 /* Table of constant values */
 
 static integer c__1 = 1;
-extern int tinstr_ (integer *, integer *);
+extern int tinstr_(integer *, integer *);
 
 /* ----------SUBROUTINE--TINPUT----------TEKTRONIX, INC.----00015420 */
-int
-tinput_ (integer * in)
+int tinput_(integer * in)
 {
-  static integer int__[1];
+    static integer int__[1];
 
-  tinstr_ (&c__1, int__);
-  *in = int__[0];
-  return 0;
+    tinstr_(&c__1, int__);
+    *in = int__[0];
+    return 0;
 }				/* tinput_ */

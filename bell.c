@@ -19,17 +19,16 @@
 
 /* Table of constant values */
 
-extern int toutpt_ (integer *);
+extern int toutpt_(integer *);
 static integer c__7 = 7;
 
 /* ----------SUBROUTINE--BELL--------------TEKTRONIX, INC.----00003440 */
-int
-bell_ (void)
+int bell_(void)
 {
 
 /* *  OUTPUT (BEL)                                            00003540 */
-  toutpt_ (&c__7);
+    toutpt_(&c__7);
 /* * BELL NULLIFIES MOVE AT TERMINAL                          00003560 */
-  tktrnx_1.kmovef = 0;
-  return 0;
+    tktrnx_1.kmovef = 0;
+    return 0;
 }				/* bell_ */

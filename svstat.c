@@ -17,30 +17,27 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SVSTAT---------TEKTRONIX, INC.----00015870 */
-int
-svstat_ (real * rarray)
+int svstat_(real * rarray)
 {
-  /* Local variables */
-  static integer i__;
+    /* Local variables */
+    static integer i__;
 #define ib ((integer *)&tktrnx_1 + 19)
 #define rb ((real *)&tktrnx_1)
 
 /* * COPY TERMINAL STATUS AREA INTO GIVEN SAVE ARRAY          015990 */
-  /* Parameter adjustments */
-  --rarray;
+    /* Parameter adjustments */
+    --rarray;
 
-  /* Function Body */
-  for (i__ = 1; i__ <= 19; ++i__)
-    {
+    /* Function Body */
+    for (i__ = 1; i__ <= 19; ++i__) {
 /* L100: */
-      rarray[i__] = rb[i__ - 1];
+	rarray[i__] = rb[i__ - 1];
     }
-  for (i__ = 1; i__ <= 41; ++i__)
-    {
+    for (i__ = 1; i__ <= 41; ++i__) {
 /* L101: */
-      rarray[i__ + 19] = (real) ib[i__ - 1];
+	rarray[i__ + 19] = (real) ib[i__ - 1];
     }
-  return 0;
+    return 0;
 }				/* svstat_ */
 
 #undef rb

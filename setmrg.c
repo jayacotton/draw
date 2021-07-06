@@ -18,10 +18,9 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SETMRG------------TEKTRONIX, INC.----00011740 */
-int
-setmrg_ (integer * mleft, integer * mright)
+int setmrg_(integer * mleft, integer * mright)
 {
-  tktrnx_1.klmrgn = *mleft;
-  tktrnx_1.krmrgn = *mright;
-  return 0;
+    tktrnx_1.klmrgn = *mleft;
+    tktrnx_1.krmrgn = *mright;
+    return 0;
 }				/* setmrg_ */

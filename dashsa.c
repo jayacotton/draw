@@ -15,83 +15,77 @@
 /* Common Block Declarations */
 
 #define tktrnx_1 tktrnx_
-extern int dasha_ (real *, real *, integer *);
-extern int lvlcht_ (void);
-extern float r_sign (real *, real *);
+extern int dasha_(real *, real *, integer *);
+extern int lvlcht_(void);
+extern float r_sign(real *, real *);
 /* ----------SUBROUTINE--DASHSA---------------TEKTRONIX, INC.----00001780 */
-int
-dashsa_ (real * x, real * y, integer * l)
+int dashsa_(real * x, real * y, integer * l)
 {
-  /* System generated locals */
-  real r__1;
+    /* System generated locals */
+    real r__1;
 
-  /* Builtin functions */
+    /* Builtin functions */
 
-  /* Local variables */
-  static real dx, dy;
-  static integer key;
-  static real frac;
-  static integer nseg;
-  static real xold, yold, xout, yout;
-  static real ystep;
+    /* Local variables */
+    static real dx, dy;
+    static integer key;
+    static real frac;
+    static integer nseg;
+    static real xold, yold, xout, yout;
+    static real ystep;
 
-  lvlcht_ ();
-  xold = tktrnx_1.timagx;
-  yold = tktrnx_1.timagy;
-  key = tktrnx_1.keycon;
-  if (tktrnx_1.keycon < 1)
-    {
-      key = 5;
+    lvlcht_();
+    xold = tktrnx_1.timagx;
+    yold = tktrnx_1.timagy;
+    key = tktrnx_1.keycon;
+    if (tktrnx_1.keycon < 1) {
+	key = 5;
     }
-  if (tktrnx_1.keycon > 4)
-    {
-      key = 4;
+    if (tktrnx_1.keycon > 4) {
+	key = 4;
     }
 /* * LINEAR LOG POLAR USER ERROR                        00001940 */
-  switch (key)
-    {
+    switch (key) {
     case 1:
-      goto L100;
+	goto L100;
     case 2:
-      goto L100;
+	goto L100;
     case 3:
-      goto L200;
+	goto L200;
     case 4:
-      goto L400;
+	goto L400;
     case 5:
-      goto L100;
+	goto L100;
     }
 /* * ERROR LINEAR LOG                                    00001960 */
-L100:
-  dasha_ (x, y, l);
-  xold = *x;
-  yold = *y;
-  return 0;
+  L100:
+    dasha_(x, y, l);
+    xold = *x;
+    yold = *y;
+    return 0;
 /* * POLAR                                                00002010 */
-L200:
-  dx = *x - xold;
-  dy = *y - yold;
-  r__1 = 5.f / tktrnx_1.trfacy;
-  ystep = r_sign (&r__1, &dy);
-  if ((r__1 = dy * .75f, dabs (r__1)) < dabs (ystep))
-    {
-      goto L100;
+  L200:
+    dx = *x - xold;
+    dy = *y - yold;
+    r__1 = 5.f / tktrnx_1.trfacy;
+    ystep = r_sign(&r__1, &dy);
+    if ((r__1 = dy * .75f, dabs(r__1)) < dabs(ystep)) {
+	goto L100;
     }
-  frac = dx / dy;
-  nseg = dy / ystep + .9999f;
-  yout = yold;
-L300:
-  if (nseg < 2)
-    {
-      goto L100;
+    frac = dx / dy;
+    nseg = dy / ystep + .9999f;
+    yout = yold;
+  L300:
+    if (nseg < 2) {
+	goto L100;
     }
-  yout += ystep;
-  xout = xold + (yout - yold) * frac;
-  dasha_ (&xout, &yout, l);
-  --nseg;
-  goto L300;
+    yout += ystep;
+    xout = xold + (yout - yold) * frac;
+    dasha_(&xout, &yout, l);
+    --nseg;
+    goto L300;
 /* * USER SEGMENTATION                                    00002150 */
-L400:
+  L400:
 /*      CALL USDASH(X,Y,L)                               00002170 */
-  goto L100;
+    goto L100;
 }				/* dashsa_ */

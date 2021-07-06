@@ -17,58 +17,50 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SETTAB---------TEKTRONIX, INC.----00012050 */
-int
-settab_ (integer * itab, integer * itbtbl)
+int settab_(integer * itab, integer * itbtbl)
 {
-  static integer i__, itemp, itempa;
+    static integer i__, itemp, itempa;
 
-  /* Parameter adjustments */
-  --itbtbl;
+    /* Parameter adjustments */
+    --itbtbl;
 
-  /* Function Body */
-  tktrnx_1.kgnflg = 0;
-  if (*itab <= 0)
-    {
-      goto L10;
+    /* Function Body */
+    tktrnx_1.kgnflg = 0;
+    if (*itab <= 0) {
+	goto L10;
     }
-  i__ = 1;
-L20:
-  if (itbtbl[i__] == *itab)
-    {
-      goto L10;
+    i__ = 1;
+  L20:
+    if (itbtbl[i__] == *itab) {
+	goto L10;
     }
-  if (*itab < itbtbl[i__])
-    {
-      goto L60;
+    if (*itab < itbtbl[i__]) {
+	goto L60;
     }
-  if (itbtbl[i__] == 0)
-    {
-      goto L60;
+    if (itbtbl[i__] == 0) {
+	goto L60;
     }
-  ++i__;
-  if (i__ <= tktrnx_1.ktblsz)
-    {
-      goto L20;
+    ++i__;
+    if (i__ <= tktrnx_1.ktblsz) {
+	goto L20;
     }
-L30:
-  tktrnx_1.kgnflg = 1;
-L10:
-  return 0;
-L60:
-  itemp = itbtbl[i__];
-  itbtbl[i__] = *itab;
-L70:
-  if (itemp == 0)
-    {
-      goto L10;
+  L30:
+    tktrnx_1.kgnflg = 1;
+  L10:
+    return 0;
+  L60:
+    itemp = itbtbl[i__];
+    itbtbl[i__] = *itab;
+  L70:
+    if (itemp == 0) {
+	goto L10;
     }
-  ++i__;
-  if (i__ > tktrnx_1.ktblsz)
-    {
-      goto L30;
+    ++i__;
+    if (i__ > tktrnx_1.ktblsz) {
+	goto L30;
     }
-  itempa = itbtbl[i__];
-  itbtbl[i__] = itemp;
-  itemp = itempa;
-  goto L70;
+    itempa = itbtbl[i__];
+    itbtbl[i__] = itemp;
+    itemp = itempa;
+    goto L70;
 }				/* settab_ */

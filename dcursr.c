@@ -11,13 +11,12 @@
 */
 
 #include "f2c.h"
-extern int scursr_ (integer *, integer *, integer *);
+extern int scursr_(integer *, integer *, integer *);
 
 /* ----------SUBROUTINE--DCURSR-----------TEKTRONIX, INC.----00014880 */
-int
-dcursr_ (integer * ichar, integer * ix, integer * iy)
+int dcursr_(integer * ichar, integer * ix, integer * iy)
 {
 
-  scursr_ (ichar, ix, iy);
-  return 0;
+    scursr_(ichar, ix, iy);
+    return 0;
 }				/* dcursr_ */

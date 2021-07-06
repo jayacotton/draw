@@ -18,12 +18,11 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SEETW----TEKTRONIX, INC.----00000570 */
-int
-seetw_ (integer * minx, integer * maxx, integer * miny, integer * maxy)
+int seetw_(integer * minx, integer * maxx, integer * miny, integer * maxy)
 {
-  *minx = tktrnx_1.kminsx;
-  *maxx = tktrnx_1.kmaxsx;
-  *miny = tktrnx_1.kminsy;
-  *maxy = tktrnx_1.kmaxsy;
-  return 0;
+    *minx = tktrnx_1.kminsx;
+    *maxx = tktrnx_1.kmaxsx;
+    *miny = tktrnx_1.kminsy;
+    *maxy = tktrnx_1.kmaxsy;
+    return 0;
 }				/* seetw_ */

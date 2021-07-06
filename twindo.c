@@ -1,32 +1,30 @@
-/* twindo.f -- translated by f2c (version 20200916).
-   You must link the resulting object file with libf2c:
-	on Microsoft Windows system, link with libf2c.lib;
-	on Linux or Unix systems, link with .../path/to/libf2c.a -lm
-	or, if you install libf2c.a in a standard place, with -lf2c -lm
-	-- in that order, at the end of the command line, as in
-		cc *.o -lf2c -lm
-	Source for libf2c is in /netlib/f2c/libf2c.zip, e.g.,
-
-		http://www.netlib.org/f2c/libf2c.zip
-*/
-
 #include "f2c.h"
 
 /* Common Block Declarations */
 
 #define tktrnx_1 tktrnx_
-extern int rescal_ (void);
+extern int rescal_(void);
 
-/* ----------SUBROUTINE--TWINDO-----------TEKTRONIX, INC.----00003990 */
-int
-twindo_ (integer * minx, integer * maxx, integer * miny, integer * maxy)
+int twindo_(integer * minx, integer * maxx, integer * miny, integer * maxy)
 {
 
-/* * DEFINE TERMINAL WINDOW IN TERMINAL COMMON AREA           00004090 */
-  tktrnx_1.kminsx = *minx;
-  tktrnx_1.kmaxsx = *maxx;
-  tktrnx_1.kminsy = *miny;
-  tktrnx_1.kmaxsy = *maxy;
-  rescal_ ();
-  return 0;
+/* * DEFINE TERMINAL WINDOW IN TERMINAL COMMON AREA         */
+    tktrnx_1.kminsx = *minx;
+    tktrnx_1.kmaxsx = *maxx;
+    tktrnx_1.kminsy = *miny;
+    tktrnx_1.kmaxsy = *maxy;
+    rescal_();
+    return 0;
 }				/* twindo_ */
+
+int twindo(int minx, int maxx, int miny, int maxy)
+{
+int ix,iy,xm,ym;
+
+	ix = minx;
+	iy = miny;
+	xm = maxx;
+	ym = maxy;
+	return(twindo_(&ix,&xm,&iy,&ym));
+	
+}

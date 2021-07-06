@@ -16,30 +16,27 @@
 
 #define tktrnx_1 tktrnx_
 
-extern int toutpt_ (integer *);
+extern int toutpt_(integer *);
 /* Table of constant values */
 
 static integer c__31 = 31;
 static integer c__28 = 28;
 
 /* ----------SUBROUTINE--PNTMOD---------TEKTRONIX, INC.----00021270 */
-int
-pntmod_ (void)
+int pntmod_(void)
 {
-  static integer ii;
+    static integer ii;
 
 /* * CANCEL PREVIOUS MODES - OUTPUT (US)                    00021370 */
-  toutpt_ (&c__31);
-  for (ii = 1; ii <= 5; ++ii)
-    {
+    toutpt_(&c__31);
+    for (ii = 1; ii <= 5; ++ii) {
 /* L111: */
-      tktrnx_1.kpchar[ii - 1] = -1;
+	tktrnx_1.kpchar[ii - 1] = -1;
     }
-  tktrnx_1.kkmode = 2;
+    tktrnx_1.kkmode = 2;
 /* * FOR HARDWARE POINT PLOT OUTPUT AN (FS)                 00021420 */
-  if (tktrnx_1.kterm >= 3)
-    {
-      toutpt_ (&c__28);
+    if (tktrnx_1.kterm >= 3) {
+	toutpt_(&c__28);
     }
-  return 0;
+    return 0;
 }				/* pntmod_ */

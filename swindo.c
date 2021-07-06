@@ -16,18 +16,17 @@
 
 
 #define tktrnx_1 tktrnx_
-extern int rescal_ (void);
+extern int rescal_(void);
 
 /* ----------SUBROUTINE--SWINDO---------TEKTRONIX, INC.----00003800 */
-int
-swindo_ (integer * minx, integer * lenx, integer * miny, integer * leny)
+int swindo_(integer * minx, integer * lenx, integer * miny, integer * leny)
 {
 
 /* * DEFINE SCREEN WINDOW IN TERMINAL COMMON AREA                 00003900 */
-  tktrnx_1.kminsx = *minx;
-  tktrnx_1.kmaxsx = *minx + *lenx;
-  tktrnx_1.kminsy = *miny;
-  tktrnx_1.kmaxsy = *miny + *leny;
-  rescal_ ();
-  return 0;
+    tktrnx_1.kminsx = *minx;
+    tktrnx_1.kmaxsx = *minx + *lenx;
+    tktrnx_1.kminsy = *miny;
+    tktrnx_1.kmaxsy = *miny + *leny;
+    rescal_();
+    return 0;
 }				/* swindo_ */

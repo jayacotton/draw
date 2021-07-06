@@ -14,25 +14,23 @@
 
 /* ----------SUBROUTINE KAM2AS-------------EGLIN AFB----------00024910 */
 
-int
-kam2as_ (integer * nc, logical1 * iam, integer * iade)
+int kam2as_(integer * nc, logical1 * iam, integer * iade)
 {
-  /* System generated locals */
-  integer i__1;
+    /* System generated locals */
+    integer i__1;
 
-  /* Local variables */
-  static integer i__;
+    /* Local variables */
+    static integer i__;
 
-  /* Parameter adjustments */
-  --iade;
-  --iam;
+    /* Parameter adjustments */
+    --iade;
+    --iam;
 
-  /* Function Body */
-  i__1 = *nc;
-  for (i__ = 1; i__ <= i__1; ++i__)
-    {
+    /* Function Body */
+    i__1 = *nc;
+    for (i__ = 1; i__ <= i__1; ++i__) {
 /*       IADE(I)=IAM(I) */
 /* L1: */
     }
-  return 0;
+    return 0;
 }				/* kam2as_ */

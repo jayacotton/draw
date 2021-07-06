@@ -11,17 +11,16 @@
 */
 
 #include "f2c.h"
-extern int tsend_ (void);
-extern int alfmod_ (void);
+extern int tsend_(void);
+extern int alfmod_(void);
 
 /* ----------SUBROUTINE--ANMODE---------------TEKTRONIX, INC.----00000150 */
-int
-anmode_ (void)
+int anmode_(void)
 {
 
 /* * ENTER ALPHA-NUMERIC MODE                             00000180 */
-  alfmod_ ();
+    alfmod_();
 /* * DUMP THE OUTPUT BUFFER                                00000200 */
-  tsend_ ();
-  return 0;
+    tsend_();
+    return 0;
 }				/* anmode_ */

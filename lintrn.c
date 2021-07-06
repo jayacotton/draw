@@ -15,14 +15,13 @@
 /* Common Block Declarations */
 
 #define tktrnx_1 tktrnx_
-extern int rescal_ (void);
+extern int rescal_(void);
 
 /* ----------SUBROUTINE--LINTRN----------TEKTRONIX, INC.----00007740 */
-int
-lintrn_ (void)
+int lintrn_(void)
 {
 
-  tktrnx_1.keycon = 1;
-  rescal_ ();
-  return 0;
+    tktrnx_1.keycon = 1;
+    rescal_();
+    return 0;
 }				/* lintrn_ */

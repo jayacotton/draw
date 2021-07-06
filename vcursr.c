@@ -11,16 +11,15 @@
 */
 
 #include "f2c.h"
-extern int revcot_ (integer *, integer *, real *, real *);
-extern int scursr_ (integer *, integer *, integer *);
+extern int revcot_(integer *, integer *, real *, real *);
+extern int scursr_(integer *, integer *, integer *);
 
 /* ----------SUBROUTINE--VCURSR-----------TEKTRONIX, INC.----00006040 */
-int
-vcursr_ (integer * ichar, real * x, real * y)
+int vcursr_(integer * ichar, real * x, real * y)
 {
-  static integer ixa, iya;
+    static integer ixa, iya;
 
-  scursr_ (ichar, &ixa, &iya);
-  revcot_ (&ixa, &iya, x, y);
-  return 0;
+    scursr_(ichar, &ixa, &iya);
+    revcot_(&ixa, &iya, x, y);
+    return 0;
 }				/* vcursr_ */

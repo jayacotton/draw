@@ -18,41 +18,37 @@
 
 /* Table of constant values */
 
-extern int alfmod_ (void);
-extern int cwsend_ (void);
-extern int movabs_ (integer *, integer *);
-extern int toutpt_ (integer *);
+extern int alfmod_(void);
+extern int cwsend_(void);
+extern int movabs_(integer *, integer *);
+extern int toutpt_(integer *);
 
 static integer c__10 = 10;
 
 /* ----------SUBROUTINE--LINEF----------TEKTRONIX, INC.----00019120 */
-int
-linef_ (void)
+int linef_(void)
 {
 
 /* * IF (LF) CAN NOT BE SENT REMOVE NEXT 2 EXECUTEABLE LINES AND   00019220 */
 /* * CHANGE @GO TO@ FROM 200 TO 100                                00019230 */
-  if (tktrnx_1.kkmode != 0)
-    {
-      alfmod_ ();
+    if (tktrnx_1.kkmode != 0) {
+	alfmod_();
     }
 /* * OUTPUT (LF)                                                   00019250 */
-  toutpt_ (&c__10);
-  tktrnx_1.kbeamy -= (tktrnx_1.kversz + tktrnx_1.kfactr / 2) /
-    tktrnx_1.kfactr;
-  if (tktrnx_1.kbeamy >= 0)
-    {
-      goto L200;
+    toutpt_(&c__10);
+    tktrnx_1.kbeamy -= (tktrnx_1.kversz + tktrnx_1.kfactr / 2) /
+	tktrnx_1.kfactr;
+    if (tktrnx_1.kbeamy >= 0) {
+	goto L200;
     }
-  tktrnx_1.kbeamy = tktrnx_1.khomey;
+    tktrnx_1.kbeamy = tktrnx_1.khomey;
 /* L100: */
-  movabs_ (&tktrnx_1.kbeamx, &tktrnx_1.kbeamy);
-  alfmod_ ();
+    movabs_(&tktrnx_1.kbeamx, &tktrnx_1.kbeamy);
+    alfmod_();
 /* * RESTORE ZAXIS MODE IF APPROPRIATE                              00019320 */
-L200:
-  if (tktrnx_1.kterm >= 2)
-    {
-      cwsend_ ();
+  L200:
+    if (tktrnx_1.kterm >= 2) {
+	cwsend_();
     }
-  return 0;
+    return 0;
 }				/* linef_ */

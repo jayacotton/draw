@@ -15,17 +15,16 @@
 /* Common Block Declarations */
 
 #define tktrnx_1 tktrnx_
-extern int dshmod_ (integer *);
-extern int tkdash_ (integer *, integer *);
+extern int dshmod_(integer *);
+extern int tkdash_(integer *, integer *);
 
 /* ----------SUBROUTINE--DSHABS-----------TEKTRONIX, INC.----00004890 */
-int
-dshabs_ (integer * ix, integer * iy, integer * l)
+int dshabs_(integer * ix, integer * iy, integer * l)
 {
 
-  dshmod_ (l);
-  tkdash_ (ix, iy);
+    dshmod_(l);
+    tkdash_(ix, iy);
 /* * SET THE GRAPHIC LEVEL FLAG TO SCREEN */
-  tktrnx_1.kgrafl = 0;
-  return 0;
+    tktrnx_1.kgrafl = 0;
+    return 0;
 }				/* dshabs_ */

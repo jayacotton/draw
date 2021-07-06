@@ -14,25 +14,23 @@
 
 /* ----------SUBROUTINE KAS2AM---------------- */
 
-int
-kas2am_ (integer * nc, integer * iade, logical1 * ia2)
+int kas2am_(integer * nc, integer * iade, logical1 * ia2)
 {
-  /* System generated locals */
-  integer i__1;
+    /* System generated locals */
+    integer i__1;
 
-  /* Local variables */
-  static integer i__;
+    /* Local variables */
+    static integer i__;
 
-  /* Parameter adjustments */
-  --ia2;
-  --iade;
+    /* Parameter adjustments */
+    --ia2;
+    --iade;
 
-  /* Function Body */
-  i__1 = *nc;
-  for (i__ = 1; i__ <= i__1; ++i__)
-    {
+    /* Function Body */
+    i__1 = *nc;
+    for (i__ = 1; i__ <= i__1; ++i__) {
 /*       IA2(I)=IADE(I) */
 /* L1: */
     }
-  return 0;
+    return 0;
 }				/* kas2am_ */

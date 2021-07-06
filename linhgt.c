@@ -17,13 +17,12 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------FUNCTION----LINHGT------------TEKTRONIX, INC.----00022540 */
-integer
-linhgt_ (integer * numlin)
+integer linhgt_(integer * numlin)
 {
-  /* System generated locals */
-  integer ret_val;
+    /* System generated locals */
+    integer ret_val;
 
-  ret_val = (tktrnx_1.kversz * *numlin + tktrnx_1.kfactr / 2) /
-    tktrnx_1.kfactr;
-  return ret_val;
+    ret_val = (tktrnx_1.kversz * *numlin + tktrnx_1.kfactr / 2) /
+	tktrnx_1.kfactr;
+    return ret_val;
 }				/* linhgt_ */

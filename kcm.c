@@ -17,17 +17,15 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------FUNCTION----KCM-----------------TEKTRONIX, INC.----00014720 */
-integer
-kcm_ (real * rc)
+integer kcm_(real * rc)
 {
-  /* System generated locals */
-  integer ret_val;
+    /* System generated locals */
+    integer ret_val;
 
-  ret_val = *rc * 215.2f / (real) tktrnx_1.kfactr;
+    ret_val = *rc * 215.2f / (real) tktrnx_1.kfactr;
 /* * USE APPROPRIATE FACTOR FOR LARGE SCREEN TERMINALS         00014830 */
-  if (tktrnx_1.kterm > 1)
-    {
-      ret_val = *rc * 112.48f / (real) tktrnx_1.kfactr;
+    if (tktrnx_1.kterm > 1) {
+	ret_val = *rc * 112.48f / (real) tktrnx_1.kfactr;
     }
-  return ret_val;
+    return ret_val;
 }				/* kcm_ */

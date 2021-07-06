@@ -14,25 +14,23 @@
 
 /* ----------SUBROUTINE KAS2A1------------EGLIN AFB----------00024900 */
 
-int
-kas2a1_ (integer * nc, integer * iade, integer * ia1)
+int kas2a1_(integer * nc, integer * iade, integer * ia1)
 {
-  /* System generated locals */
-  integer i__1;
+    /* System generated locals */
+    integer i__1;
 
-  /* Local variables */
-  static integer i__;
+    /* Local variables */
+    static integer i__;
 
-  /* Parameter adjustments */
-  --ia1;
-  --iade;
+    /* Parameter adjustments */
+    --ia1;
+    --iade;
 
-  /* Function Body */
-  i__1 = *nc;
-  for (i__ = 1; i__ <= i__1; ++i__)
-    {
+    /* Function Body */
+    i__1 = *nc;
+    for (i__ = 1; i__ <= i__1; ++i__) {
 /* L1: */
-      ia1[i__] = iade[i__] + 8192;
+	ia1[i__] = iade[i__] + 8192;
     }
-  return 0;
+    return 0;
 }				/* kas2a1_ */

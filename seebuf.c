@@ -17,9 +17,8 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--SEEBUF-----------TEKTRONIX, INC.----00016710 */
-int
-seebuf_ (integer * kform)
+int seebuf_(integer * kform)
 {
-  *kform = tktrnx_1.kunit;
-  return 0;
+    *kform = tktrnx_1.kunit;
+    return 0;
 }				/* seebuf_ */

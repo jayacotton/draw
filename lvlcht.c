@@ -15,22 +15,20 @@
 /* Common Block Declarations */
 
 #define tktrnx_1 tktrnx_
-extern int revcot_ (integer *, integer *, real *, real *);
+extern int revcot_(integer *, integer *, real *, real *);
 
 /* ----------SUBROUTINE--LVLCHT--------------TEKTRONIX, INC.----00009970 */
-int
-lvlcht_ (void)
+int lvlcht_(void)
 {
 
-  if (tktrnx_1.kgrafl != 0)
-    {
-      goto L10;
+    if (tktrnx_1.kgrafl != 0) {
+	goto L10;
     }
-  revcot_ (&tktrnx_1.kbeamx, &tktrnx_1.kbeamy, &tktrnx_1.trealx,
-	   &tktrnx_1.trealy);
-  tktrnx_1.timagx = tktrnx_1.trealx;
-  tktrnx_1.timagy = tktrnx_1.trealy;
-  tktrnx_1.kgrafl = 1;
-L10:
-  return 0;
+    revcot_(&tktrnx_1.kbeamx, &tktrnx_1.kbeamy, &tktrnx_1.trealx,
+	    &tktrnx_1.trealy);
+    tktrnx_1.timagx = tktrnx_1.trealx;
+    tktrnx_1.timagy = tktrnx_1.trealy;
+    tktrnx_1.kgrafl = 1;
+  L10:
+    return 0;
 }				/* lvlcht_ */

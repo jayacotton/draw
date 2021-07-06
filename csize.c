@@ -17,10 +17,9 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--CSIZE-----------TEKTRONIX, INC.----00021120 */
-int
-csize_ (integer * ihorz, integer * ivert)
+int csize_(integer * ihorz, integer * ivert)
 {
-  *ihorz = (tktrnx_1.khorsz + tktrnx_1.kfactr / 2) / tktrnx_1.kfactr;
-  *ivert = (tktrnx_1.kversz + tktrnx_1.kfactr / 2) / tktrnx_1.kfactr;
-  return 0;
+    *ihorz = (tktrnx_1.khorsz + tktrnx_1.kfactr / 2) / tktrnx_1.kfactr;
+    *ivert = (tktrnx_1.kversz + tktrnx_1.kfactr / 2) / tktrnx_1.kfactr;
+    return 0;
 }				/* csize_ */

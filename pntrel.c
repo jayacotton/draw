@@ -16,16 +16,15 @@
 
 #define tktrnx_1 tktrnx_
 
-extern int pntabs_ (integer *, integer *);
+extern int pntabs_(integer *, integer *);
 
 /* ----------SUBROUTINE--PNTREL----------TEKTRONIX, INC.----00011010 */
-int
-pntrel_ (integer * ix, integer * iy)
+int pntrel_(integer * ix, integer * iy)
 {
-  static integer jx, jy;
+    static integer jx, jy;
 
-  jx = tktrnx_1.kbeamx + *ix;
-  jy = tktrnx_1.kbeamy + *iy;
-  pntabs_ (&jx, &jy);
-  return 0;
+    jx = tktrnx_1.kbeamx + *ix;
+    jy = tktrnx_1.kbeamy + *iy;
+    pntabs_(&jx, &jy);
+    return 0;
 }				/* pntrel_ */

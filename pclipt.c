@@ -17,28 +17,23 @@
 #define tktrnx_1 tktrnx_
 
 /* ----------SUBROUTINE--PCLIPT-----------TEKTRONIX, INC.----00010820 */
-int
-pclipt_ (real * x, real * y)
+int pclipt_(real * x, real * y)
 {
-  tktrnx_1.kgnflg = 0;
-  if (*x < tktrnx_1.tminvx)
-    {
-      goto L10;
+    tktrnx_1.kgnflg = 0;
+    if (*x < tktrnx_1.tminvx) {
+	goto L10;
     }
-  if (*x > tktrnx_1.tmaxvx)
-    {
-      goto L10;
+    if (*x > tktrnx_1.tmaxvx) {
+	goto L10;
     }
-  if (*y < tktrnx_1.tminvy)
-    {
-      goto L10;
+    if (*y < tktrnx_1.tminvy) {
+	goto L10;
     }
-  if (*y <= tktrnx_1.tmaxvy)
-    {
-      goto L20;
+    if (*y <= tktrnx_1.tmaxvy) {
+	goto L20;
     }
-L10:
-  tktrnx_1.kgnflg = 1;
-L20:
-  return 0;
+  L10:
+    tktrnx_1.kgnflg = 1;
+  L20:
+    return 0;
 }				/* pclipt_ */
