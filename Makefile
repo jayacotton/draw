@@ -1,6 +1,7 @@
 CC = zcc
 SHELL = /bin/sh
-CFLAGS = +cpm -Wall --list -DCPM  -DSkip_f2c_Undefs -x
+#CFLAGS = +cpm -Wall --list --c-code-in-asm -DCPM  -DSkip_f2c_Undefs -x
+CFLAGS = +cpm -Wall -DCPM  -DSkip_f2c_Undefs -x
 CFILES = $(wildcard *.c)
 OFILES = $(CFILES:.c=.o)
 
