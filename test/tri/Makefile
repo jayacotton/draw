@@ -1,10 +1,12 @@
-CFLAGS = --list --c-code-in-asm  -Wall
-MYLIB = /home/jay/projects/graphics/plot10/c
-F2CLIB = /home/jay/projects/ftoc/lib/
+CFLAGS = +cpm -SO3 --list --c-code-in-asm  -Wall
+DEFF = -DSTATIC -DTYPE2 -DTEK4010 -DDEBUG
 all:	tri
 
 tri:
-	zcc +rc2014 -subtype=hbios -SO3 --max-allocs-per-node400000 $(CFLAGS) -DSTATIC -DTYPE2 -DTEK4010 -create-app -otri tri.c -m -lm @plot10.lst
+	zcc $(CFLAGS) $(DEFF) -create-app -otri tri.c -m @plot.lst -lmath48
 
 clean:
-	$(RM) *.err *.lis *.def *.sym *.exe *.COM tri 
+	$(RM) *.err *.lis *.def *.sym *.exe *.COM tri *.map 
+
+install:
+	sudo cp TRI.COM /var/www/html/.
