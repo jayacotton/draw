@@ -1,42 +1,23 @@
-#ifdef TEK4010
 #include <math.h>
 #include <stdio.h>
 #include "gems.h"
 #include "../../f2c.h"
 #include "../../plot.h"
-#endif
-
-#define TRACEL(msg) printf("%s %d %s\n",__FILE__,__LINE__,msg);
 
 void main()
 {
-	initt_(30);
-	vwindo_(0.0,8.0,0.0,6.0);
-	movea_(1.0,1.0);
-	drawa_(1.0,4.0);
-	drawa_(4.0,4.0);
-	drawa_(4.0,1.0);
-	drawa_(1.0,1.0);
-	movea_(1.0,1.0);
-	drawa_(1.0,4.0);
-	drawa_(4.0,4.0);
-	drawa_(4.0,1.0);
-	drawa_(1.0,1.0);
-	pointa_(2.5,2.5);
-	drawa_(4.0,1.0);
-	drawa_(1.0,1.0);
-	pointa_(2.5,2.5);
-	finitt_(0,767);
+	initt(30);
+	vwindo(0.0,8.0,0.0,6.0);
+	movea(1.0,1.0);
+	drawa(1.0,4.0);
+	drawa(4.0,4.0);
+	drawa(4.0,1.0);
+	drawa(1.0,1.0);
+	movea(1.0,1.0);
+	drawa(1.0,4.0);
+	drawa(4.0,4.0);
+	drawa(4.0,1.0);
+	drawa(1.0,1.0);
+	pointa(2.5,2.5);
+	finitt(0,767);
 }
-int count ;
-int adeout_(int len, int *buf)
-{
-        count = len;
-        if(count == 0) 
-		return 0;
-        while(count--){
-                putchar(*buf++);
-        }
-        return 0;
-}
-
