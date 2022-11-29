@@ -5,11 +5,14 @@ CFLAGS = +cpm -Wall -DCPM  -DSkip_f2c_Undefs -x
 CFILES = $(wildcard *.c)
 OFILES = $(CFILES:.c=.o)
 
-libplot.a: $(OFILES)
+libplot.lib: $(OFILES)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -o $@ -c $^
 
+lib:	$(OFILES)
+	z88dk-z80asm -x=libplot.lib *.o
+	
 tab:	
 	indent $(CFILES)
 
